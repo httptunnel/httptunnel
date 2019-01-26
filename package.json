@@ -1,12 +1,12 @@
 {
-  "author": "Roman Shtylman <shtylman@gmail.com>",
-  "name": "localtunnel",
+  "author": "KhoaZero123 <khoazero123@gmail.com>",
+  "name": "localtunnel-client",
   "description": "expose localhost to the world",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/localtunnel/localtunnel.git"
+    "url": "git://github.com/khoazero123/localtunnel-client.git"
   },
   "dependencies": {
     "axios": "0.17.1",
