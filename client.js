@@ -8,6 +8,7 @@ module.exports = function localtunnel(port, opt, fn) {
         fn = opt;
         opt = {};
     }
+    typeof fn != "function" && (fn = function(err, tunnel) {});
 
     opt = opt || {};
     opt.port = port;
