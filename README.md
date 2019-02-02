@@ -1,18 +1,18 @@
-# localtunnel
+# httptunnel
 
-[![Build Status](https://travis-ci.org/localtunnel/localtunnel.svg?branch=master)](https://travis-ci.org/localtunnel/localtunnel)
+[![Build Status](https://travis-ci.org/httptunnel/httptunnel.svg?branch=master)](https://travis-ci.org/httptunnel/httptunnel)
 
-localtunnel exposes your localhost to the world for easy testing and sharing! No need to mess with DNS or deploy just to have others test out your changes.
+httptunnel exposes your localhost to the world for easy testing and sharing! No need to mess with DNS or deploy just to have others test out your changes.
 
 Great for working with browser testing tools like browserling or external api callback services like twilio which require a public url for callbacks.
 
 ## installation ##
 
 ```
-npm install -g localtunnel
+npm install -g httptunnel
 ```
 
-This will install the localtunnel module globally and add the 'lt' client cli tool to your PATH.
+This will install the httptunnel module globally and add the 'lt' client cli tool to your PATH.
 
 ## use ##
 
@@ -30,7 +30,7 @@ You can restart your local server all you want, ```lt``` is smart enough to dete
 
 Below are some common arguments. See `lt --help` for additional arguments
 
-* `--subdomain` request a named subdomain on the localtunnel server (default is random characters)
+* `--subdomain` request a named subdomain on the httptunnel server (default is random characters)
 * `--local-host` proxy to a hostname other than localhost
 
 You may also specify arguments via env variables.  E.x.
@@ -41,20 +41,20 @@ PORT=3000 lt
 
 ## API ##
 
-The localtunnel client is also usable through an API (for test integration, automation, etc)
+The httptunnel client is also usable through an API (for test integration, automation, etc)
 
-### localtunnel(port [,opts], fn)
+### httptunnel(port [,opts], fn)
 
-Creates a new localtunnel to the specified local `port`. `fn` will be called once you have been assigned a public localtunnel url. `opts` can be used to request a specific `subdomain`.
+Creates a new httptunnel to the specified local `port`. `fn` will be called once you have been assigned a public httptunnel url. `opts` can be used to request a specific `subdomain`.
 
 ```javascript
-var localtunnel = require('localtunnel');
+var httptunnel = require('httptunnel');
 
-var tunnel = localtunnel(port, function(err, tunnel) {
+var tunnel = httptunnel(port, function(err, tunnel) {
     if (err) ...
 
     // the assigned public url for your tunnel
-    // i.e. https://abcdefgjhij.localtunnel.me
+    // i.e. https://abcdefgjhij.httptunnel.tech
     tunnel.url;
 });
 
@@ -83,18 +83,6 @@ The `tunnel` instance has the following methods
 |method|args|description|
 |----|----|----|
 |close||close the tunnel|
-
-## other clients ##
-
-Clients in other languages
-
-*go* [gotunnelme](https://github.com/NoahShen/gotunnelme)
-
-*go* [go-localtunnel](https://github.com/localtunnel/go-localtunnel)
-
-## server ##
-
-See [localtunnel/server](//github.com/localtunnel/server) for details on the server that powers localtunnel.
 
 ## License ##
 MIT
